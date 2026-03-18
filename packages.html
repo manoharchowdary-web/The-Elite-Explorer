@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelNow - Holiday Packages</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+
+  .package-section { margin-top: 2rem; }
+
+  .package-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .package-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .package-card-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .package-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .package-desc {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .collapse-content {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .highlight {
+    border: 3px solid #0d6efd !important;
+    box-shadow: 0 0 20px rgba(13,110,253,0.5);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">TravelNow</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav me-auto" id="navLinks"></ul>
+      <div id="navAuth"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="container package-section">
+
+  <h3 class="mb-4 text-center">Explore Our Holiday Packages</h3>
+
+  <div class="row g-4 justify-content-center">
+
+    <!-- GOA -->
+    <div class="col-md-4" id="goa">
+      <div class="package-card">
+        <img src="/Public/project.html/images/goa.jpeg">
+        <div class="package-card-body">
+          <div>
+            <div class="package-title">Goa Beach Escape</div>
+            <div class="package-desc">Sun, sand, nightlife and water adventures.</div>
+          </div>
+
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#goaPlan">More</button>
+
+          <div class="collapse collapse-content" id="goaPlan">
+            Day 1: Arrival & Beach Walk<br>
+            Day 2: Water Sports<br>
+            Day 3: Nightlife & Cruise<br>
+            Day 4: Departure
+          </div>
+
+          <button class="btn btn-success btn-sm mt-2"
+            onclick="bookPackage('Goa Beach Escape','Goa','4 Days','Hotel stay included')">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAIPUR -->
+    <div class="col-md-4" id="jaipur">
+      <div class="package-card">
+        <img src="/Public/project.html/images/jaipur.jpeg">
+        <div class="package-card-body">
+          <div>
+            <div class="package-title">Jaipur Royal Experience</div>
+            <div class="package-desc">Forts, palaces and colorful markets.</div>
+          </div>
+
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#jaipurPlan">More</button>
+
+          <div class="collapse collapse-content" id="jaipurPlan">
+            Day 1: City Tour<br>
+            Day 2: Amber Fort<br>
+            Day 3: Markets & Culture<br>
+            Day 4: Departure
+          </div>
+
+          <button class="btn btn-success btn-sm mt-2"
+            onclick="bookPackage('Jaipur Royal Experience','Jaipur','4 Days','Heritage stay included')">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANALI -->
+    <div class="col-md-4" id="manali">
+      <div class="package-card">
+        <img src="/Public/project.html/images/manali.jpeg">
+        <div class="package-card-body">
+          <div>
+            <div class="package-title">Manali Himalayan Adventure</div>
+            <div class="package-desc">Snow, mountains and adventure sports.</div>
+          </div>
+
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#manaliPlan">More</button>
+
+          <div class="collapse collapse-content" id="manaliPlan">
+            Day 1: Arrival<br>
+            Day 2: Solang Valley<br>
+            Day 3: Rohtang Pass<br>
+            Day 4: Departure
+          </div>
+
+          <button class="btn btn-success btn-sm mt-2"
+            onclick="bookPackage('Manali Himalayan Adventure','Manali','4 Days','Mountain stay included')">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KERALA -->
+    <div class="col-md-4">
+      <div class="package-card">
+        <img src="/Public/project.html/images/kerala backwater.jpeg">
+        <div class="package-card-body">
+          <div>
+            <div class="package-title">Kerala Backwaters</div>
+            <div class="package-desc">Peaceful houseboats and local cuisine.</div>
+          </div>
+
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#keralaPlan">More</button>
+
+          <div class="collapse collapse-content" id="keralaPlan">
+            Houseboat stay, village tour, beaches.
+          </div>
+
+          <button class="btn btn-success btn-sm mt-2"
+            onclick="bookPackage('Kerala Backwaters','Kerala','4 Days','Houseboat stay included')">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANDAMAN -->
+    <div class="col-md-4">
+      <div class="package-card">
+        <img src="/Public/project.html/images/andaman.jpeg">
+        <div class="package-card-body">
+          <div>
+            <div class="package-title">Andaman Island Paradise</div>
+            <div class="package-desc">Crystal waters and island hopping.</div>
+          </div>
+
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="collapse" data-bs-target="#andamanPlan">More</button>
+
+          <div class="collapse collapse-content" id="andamanPlan">
+            Beaches, scuba diving, island tours.
+          </div>
+
+          <button class="btn btn-success btn-sm mt-2"
+            onclick="bookPackage('Andaman Island Paradise','Andaman','4 Days','Beach resort included')">
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+function renderNavbar(){
+  const navLinks = document.getElementById("navLinks");
+  const navAuth = document.getElementById("navAuth");
+
+  navLinks.innerHTML = navAuth.innerHTML = "";
+
+  if(!isLoggedIn){
+    navLinks.innerHTML = `<li class="nav-item"><a class="nav-link active" href="#">Holiday Packages</a></li>`;
+    navAuth.innerHTML = `
+      <button class="btn btn-outline-light me-2" onclick="location.href='loginpage.html'">Sign In</button>
+      <button class="btn btn-primary" onclick="location.href='signup.html'">Sign Up</button>
+    `;
+  } else {
+    navLinks.innerHTML = `
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="bookings.html">Bookings</a></li>
+      <li class="nav-item"><a class="nav-link active" href="#">Holiday Packages</a></li>
+    `;
+    navAuth.innerHTML = `
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown">👤 Profile</button>
+        <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width:250px;">
+          <li>
+            <h6 id="profileName"></h6>
+            <p>Email: <span id="profileEmail"></span></p>
+            <p>Phone: <span id="profilePhone"></span></p>
+            <hr>
+            <button class="btn btn-primary w-100 mb-2" onclick="location.href='bookings.html'">My Bookings</button>
+            <button class="btn btn-outline-danger w-100" onclick="logout()">Logout</button>
+          </li>
+        </ul>
+      </div>
+    `;
+    document.getElementById("profileName").textContent = "Hello, " + (localStorage.getItem("username") || "User");
+    document.getElementById("profileEmail").textContent = localStorage.getItem("email");
+    document.getElementById("profilePhone").textContent = localStorage.getItem("phone");
+  }
+}
+
+function logout(){
+  localStorage.clear();
+  location.href="loginpage.html";
+}
+
+renderNavbar();
+
+/* SCROLL FROM INDEX */
+const params = new URLSearchParams(window.location.search);
+const place = params.get("place");
+
+if(place){
+  setTimeout(()=>{
+    const el = document.getElementById(place);
+    if(el){
+      el.scrollIntoView({behavior:"smooth", block:"center"});
+      el.classList.add("highlight");
+    }
+  },300);
+}
+
+/* BOOKING */
+const packageCosts = {
+  "Goa Beach Escape": 1100,
+  "Jaipur Royal Experience": 1500,
+  "Kerala Backwaters": 1200,
+  "Manali Himalayan Adventure": 1300,
+  "Andaman Island Paradise": 1800
+};
+
+function bookPackage(name,destination,duration,stay){
+  if(!isLoggedIn) return alert("Login first!");
+
+  const from = prompt("Enter starting location:");
+  const passengers = parseInt(prompt("Passengers:")) || 1;
+
+  const total = packageCosts[name]*4 + (7500*passengers);
+
+  const confirmBooking = confirm(`${name}\nFrom: ${from}\nTo: ${destination}\nTotal: ₹${total}`);
+  if(!confirmBooking) return;
+
+  let bookings = JSON.parse(localStorage.getItem("bookings")||"[]");
+
+  bookings.push({
+    type:"Package",
+    route:`${from} → ${destination}`,
+    tickets:passengers,
+    total:total,
+    packageName:name
+  });
+
+  localStorage.setItem("bookings",JSON.stringify(bookings));
+
+  alert("Booked successfully!");
+}
+</script>
+
+</body>
+</html>
